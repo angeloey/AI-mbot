@@ -1,10 +1,10 @@
 import bettercam
 import threading
 import queue
+from mouse import scanSizeX, scanSizeY
 
-
-left, top = (1920 - 320) // 2, (1080 - 320) // 2
-right, bottom = left + 320, top + 320
+left, top = (1920 - scanSizeX) // 2, (1080 - scanSizeY) // 2
+right, bottom = left + scanSizeX, top + scanSizeY
 region = (left, top, right, bottom)
 
 

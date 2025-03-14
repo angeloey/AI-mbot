@@ -35,7 +35,7 @@ def init():
 
 
     while True:
-        if keyboard.is_pressed("v"):
+        if win32api.GetAsyncKeyState(0x01):
             image = capture.getFrame()
             if image is not None:
                 result = detectBaddies(model, image)
