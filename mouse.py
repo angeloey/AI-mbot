@@ -6,9 +6,9 @@ class MouseThread:
     def __init__(self):
     #sens_mod = 8182 #180deg = this many pixels
         self.dpi = 800
-        self.sense = 1
-        self.fov_x = 106
-        self.fov_y = 74
+        self.sense = 32
+        self.fov_x = 95
+        self.fov_y = 64
 
         self.min_speed_multiplier = 1
         self.max_speed_multiplier = 15
@@ -52,9 +52,9 @@ class MouseThread:
         mouse_move_y = offset_y * degrees_per_pixel_y
         move_y = (mouse_move_y / 360) * (self.dpi * (1 / self.sense)) * speed_multiplier
         
-        self.moveMouse(int(move_x), int(move_y))
-        if abs(move_x) < 10 and abs(move_y) < 10:
-            self.leftClick()
+        self.moveMouse(int(offset_x), int(offset_y))
+        #if abs(offset_x) < 10 and abs(offset_y) < 10:
+        #    self.leftClick()
 
     def calculate_speed_multiplier(self, distance):
             normalized_distance = min(distance / self.max_distance, 1)
